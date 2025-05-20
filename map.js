@@ -115,12 +115,18 @@ const vehicleIcons = {
   myLocationButton.addTo(mymap);
 
   // Tambahkan checkbox untuk toggle 'Gunakan Lokasi Saya'
-  const locationToggleDiv = document.createElement('div');
-  locationToggleDiv.className = 'use-my-location';
-  locationToggleDiv.innerHTML = `
-    <input type="checkbox" id="use-my-location" name="use-my-location">
-    <label for="use-my-location">Gunakan Lokasi Saya sebagai titik awal</label>
-  `;
+const locationToggleDiv = document.createElement('div');
+locationToggleDiv.className = 'use-my-location';
+locationToggleDiv.style.display = 'flex';
+locationToggleDiv.style.alignItems = 'center';
+locationToggleDiv.style.height = '60px';
+
+
+// Checkbox setelah teks
+locationToggleDiv.innerHTML = `
+  <label for="use-my-location">Ingin melihat titik anda berada?</label>
+  <input type="checkbox" id="use-my-location" name="use-my-location" style="transform: scale(1.0); width: 20px; height: 20px; margin-left: 10px; cursor: pointer;">
+`;
   
   // Masukkan di atas dropdown from
   const fromDropdown = document.getElementById('from').parentNode;
