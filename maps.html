@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Navigasi & Maps UIN Jakarta</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tombol show sidebar -->
+  <button class="show-btn" id="showSidebarBtn" onclick="toggleSidebar(true)">☰</button>
+
+  <!-- Sidebar -->
+  <div class="controls" id="routeControls">
+    
+    <!-- Tombol close & home -->
+    <div class="top-buttons">
+      <button class="icon-btn home-btn" onclick="window.location.href='index.html'">
+        <img src="img\home-removebg-preview.png" alt="Home" />
+      </button>
+      <button class="icon-btn close-btn" onclick="toggleSidebar(false)">×</button>
+    </div>
+
+    <div class="controls-content">
+      <!-- Drag handle for mobile -->
+      <div class="drag-handle"></div>
+      
+      <input type="text" id="search-input" placeholder="Cari nama lokasi atau koordinat (lat, lng)" />
+      <button id="search-button">Cari</button>
+
+      <label for="from">Dari:</label>
+      <select id="from"></select>
+      <label for="to">Ke: </label>
+      <select id="to"></select>
+
+      <label for="vehicle-select">Pilih transportasi:</label>
+      <select id="vehicle-select">
+        <option value="walk">🚶 Jalan Kaki</option>
+        <option value="motorbike">🏍️ Motor</option>
+        <option value="car">🚗 Mobil</option>
+      </select>
+
+      <button id="route-button">Tampilkan Rute</button>
+    </div>
+  </div>
+
+
+  <!-- Map -->
+  <div id="mymap"></div>
+
+  <!-- Script -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
